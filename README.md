@@ -290,7 +290,6 @@ Great for:
 | **Cross-version resolution** | ✅     | ❌      | ❌        |
 | **Configuration complexity** | Simple | Complex | Medium    |
 | **Learning curve**           | Low    | High    | Medium    |
-| **Size**                     | ~100KB | ~50MB   | ~5MB      |
 | **Parallel execution**       | ✅     | ✅      | ✅        |
 | **Dependency graph**         | ✅     | ✅      | ✅        |
 
@@ -612,14 +611,13 @@ npm publish
 npm install -g spinx
 ```
 
-## Comparison with Competitors
+## Comparison
 
 | Feature                  | spinx          | Nx         | Turborepo | Lerna     |
 | ------------------------ | -------------- | ---------- | --------- | --------- |
 | Cross-version resolution | ✅ **Unique!** | ❌         | ❌        | ❌        |
 | Config simplicity        | ✅ Simple      | ❌ Complex | ✅ Simple | ⚠️ Medium |
 | Learning curve           | ✅ Low         | ❌ High    | ✅ Low    | ⚠️ Medium |
-| Package size             | ✅ ~100KB      | ❌ ~50MB   | ⚠️ ~5MB   | ✅ ~1MB   |
 | Parallel builds          | ✅             | ✅         | ✅        | ✅        |
 | Dependency graph         | ✅             | ✅         | ✅        | ✅        |
 | TypeScript support       | ✅             | ✅         | ✅        | ✅        |
