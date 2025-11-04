@@ -1,0 +1,51 @@
+{
+  "name": "spinx",
+  "version": "0.1.0",
+  "description": "Minimal, fast monorepo manager with advanced dependency resolution",
+  "type": "module",
+  "bin": {
+    "spinx": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup src/cli.ts src/resolver-hook.ts --format esm,cjs --dts --clean",
+    "dev": "tsup src/cli.ts --format esm --watch",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirikshan/spinx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nirikshan/spinx/issues"
+  },
+  "homepage": "https://github.com/nirikshan/spinx#readme",
+  "keywords": [
+    "monorepo",
+    "workspace",
+    "dependency-management",
+    "parallel-execution"
+  ],
+  "author": "Nirikshan Bhusal",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chokidar": "^3.6.0",
+    "execa": "^8.0.1",
+    "p-limit": "^5.0.0",
+    "kleur": "^4.1.5",
+    "zod": "^3.22.4",
+    "fs-extra": "^11.2.0",
+    "fast-glob": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/fs-extra": "^11.0.4",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
