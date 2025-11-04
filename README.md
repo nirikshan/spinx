@@ -35,6 +35,7 @@ module.exports = {
       alias: "@utils",
       command: {
         build: "npm run build",
+        customcommand: "echo 'k xa bro ?'",
       },
     },
     {
@@ -45,6 +46,7 @@ module.exports = {
         build: "npm run build",
         start: "npm run dev",
         live: "npm run start:prod",
+        customcommand: "echo 'Hi from Nirikshan'",
       },
     },
     {
@@ -55,6 +57,7 @@ module.exports = {
         build: "npm run build",
         start: "npm run dev",
         live: "npm run start:prod",
+        customcommand: "echo 'Hey This is Nirikshan Bhusal'",
       },
     },
   ],
@@ -235,7 +238,7 @@ $ spinx conflicts
 💡 These conflicts will be automatically resolved at runtime.
 ```
 
-## 📦 Configuration
+## Configuration
 
 ### spinxConfig
 
@@ -283,31 +286,7 @@ Great for:
 - Testing packages together
 - Version management across packages
 
-## 🔍 How It Differs
-
-| Feature                      | spinx  | Nx      | Turborepo |
-| ---------------------------- | ------ | ------- | --------- |
-| **Cross-version resolution** | ✅     | ❌      | ❌        |
-| **Configuration complexity** | Simple | Complex | Medium    |
-| **Learning curve**           | Low    | High    | Medium    |
-| **Parallel execution**       | ✅     | ✅      | ✅        |
-| **Dependency graph**         | ✅     | ✅      | ✅        |
-
-## 🛠️ Development
-
-### Build
-
-```bash
-npm run build
-```
-
-### Test
-
-```bash
-npm test
-```
-
-## 📝 Example Project Structure
+## Example Project Structure
 
 ```
 my-monorepo/
@@ -330,7 +309,7 @@ my-monorepo/
         └── src/
 ```
 
-### ✅ Core Features
+### Core Features
 
 1. **Central node_modules with Version Management**
 
@@ -371,17 +350,10 @@ spinx/
 │   ├── tasks.ts         # Parallel task execution
 │   ├── add.ts           # Dependency management
 │   └── utils.ts         # Helper functions
-├── tests/
-│   └── graph.test.ts    # Graph tests
-├── scripts/
-│   └── quickstart.sh    # Project setup script
-├── examples/
-│   └── spinx.config.example.js
 ├── types.d.ts           # TypeScript definitions
 ├── package.json
 ├── tsconfig.json
-├── README.md            # Main documentation
-└── USAGE.md             # Detailed usage guide
+└── README.md            # Main documentation
 
 Generated at runtime:
 .spinx/
@@ -512,6 +484,9 @@ spinx explain @orders express
 
 # View graph
 spinx graph
+
+# Run your custom command
+spinx run <command key from spinup.config.js > workspace > command object >
 ```
 
 ## Example Scenario: Version Conflict
@@ -593,24 +568,6 @@ npm test
 npm test graph.test.ts
 ```
 
-## Publishing to npm
-
-When ready to publish:
-
-```bash
-# Update version
-npm version patch  # or minor, major
-
-# Build
-npm run build
-
-# Publish
-npm publish
-
-# Install globally
-npm install -g spinx
-```
-
 ## Comparison
 
 | Feature                  | spinx          | Nx         | Turborepo | Lerna     |
@@ -622,77 +579,14 @@ npm install -g spinx
 | Dependency graph         | ✅             | ✅         | ✅        | ✅        |
 | TypeScript support       | ✅             | ✅         | ✅        | ✅        |
 
-## What Makes spinx Special
-
-1. **Cross-Version Resolution** - The only monorepo tool that can handle different package versions correctly at runtime
-
-2. **Zero Configuration Bloat** - One simple config file vs. dozens of Nx config files
-
-3. **Fast & Lightweight** - No heavy plugins, no magic, just fast execution
-
-4. **pnpm-First** - Built specifically for pnpm's workspace features
-
-5. **Developer Experience** - Clear error messages, helpful commands, simple mental model
-
-## Next Steps
-
-1. **Install dependencies**
-
-   ```bash
-   cd spinx && npm install
-   ```
-
-2. **Build the project**
-
-   ```bash
-   npm run build
-   ```
-
-3. **Try the quickstart**
-
-   ```bash
-   ./scripts/quickstart.sh
-   ```
-
-4. **Test with your own project**
-
-   ```bash
-   npm link  # Make spinx available globally
-   cd /your/monorepo
-   spinx init
-   ```
-
-5. **Read the docs**
-   - README.md - Overview and quick start
-   - USAGE.md - Detailed usage patterns
-   - examples/ - Config examples
-
-## Troubleshooting
-
-### "Module not found" errors
-
-- Run `spinx build` to regenerate resolution map
-- Check that .spinx/resolver.js exists
-- Verify NODE_OPTIONS includes the resolver
-
-### "Circular dependency" errors
-
-- Check `spinx graph` to see dependencies
-- Remove circular references in spinx.config.js
-
-### "pnpm not found" errors
-
-- Install pnpm: `npm install -g pnpm`
-
 ## Contributing
 
-Future enhancements to consider:
+Looking for future enhancements for following features :
 
 - [ ] Watch mode with hot reload
 - [ ] TUI dashboard (spinx view)
 - [ ] Cache system for faster builds
-- [ ] Remote cache support
-- [ ] Plugin system
+- [ ] Remote cache support ( Contact Me )
 - [ ] Better TypeScript project references
 
 **My core focus for this project was:**

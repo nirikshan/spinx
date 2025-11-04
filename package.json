@@ -1,6 +1,6 @@
 {
   "name": "spinx",
-  "version": "0.2.0",
+  "version": "0.1.3",
   "description": "Minimal, fast monorepo manager with advanced dependency resolution",
   "type": "module",
   "bin": {
